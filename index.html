@@ -1,160 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiranmai Kodali | Web Designer & Digital Marketing Expert</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Your Name] | Web Developer & Digital Marketer</title>
+  <meta name="description" content="Portfolio of [Your Name], bridging front-end web development, technical SEO, and conversion rate optimization to drive measurable growth.">
+  
+  <!-- Structured Data (Schema.org) for Technical SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "[Your Name]",
+    "jobTitle": "Web Developer & Digital Marketer",
+    "url": "https://yourwebsite.com"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(5px);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 64px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eff6ff;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      max-width: 720px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 32px;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--border);
+    }
+
+    /* Sections */
+    section {
+      padding: 64px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    /* Case Studies Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: var(--muted);
+    }
+
+    /* Skills Columns */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .skill-box ul {
+      list-style: none;
+      color: var(--muted);
+    }
+
+    .skill-box li {
+      margin-bottom: 8px;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .skill-box li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* Footer / Contact */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 0;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    footer h2 {
+      color: var(--text);
+    }
+
+    footer p {
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .nav-links { gap: 14px; font-size: 0.85rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header & Navigation -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Kiranmai.<span>Kodali</span></div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#portfolio">Projects</a></li>
-                <li><a href="#contact" class="btn-nav">Get in Touch</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <span class="badge">6+ Years Experience</span>
-            <h1>Crafting Digital Experiences & Marketing Growth</h1>
-            <p>Hi, I'm <strong>Kiranmai Kodali</strong>. I bridge the gap between stunning web design and high-converting digital marketing strategies to scale brands online.</p>
-            <div class="hero-btns">
-                <a href="#portfolio" class="btn primary-btn">View My Work</a>
-                <a href="#contact" class="btn secondary-btn">Let's Connect</a>
-            </div>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">[Your Name]</a>
+        <div class="nav-links">
+          <a href="#work">Case Studies</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <!-- Upload your PDF resume as resume.pdf in the same folder -->
+          <a href="resume.pdf" target="_blank" style="color: var(--accent);">Resume PDF</a>
         </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" style="border-top: none;">
+      <span class="badge">Web Development + Digital Marketing</span>
+      <h1>I build fast, high-converting websites backed by technical SEO and data.</h1>
+      <p>
+        Hi, I'm [Your Name]. With [X] years of web development experience, I bridge the gap between clean code and marketing growth—turning clicks into customers through CRO, analytics, and search optimization.
+      </p>
+      <div class="cta-group">
+        <a href="#work" class="btn btn-primary">View Marketing Case Studies</a>
+        <a href="resume.pdf" target="_blank" class="btn btn-secondary">Download Resume (PDF)</a>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>With over <strong>6 years of professional experience</strong> in the digital ecosystem, I specialize in building responsive, user-centric web designs and orchestrating data-driven digital marketing campaigns.</p>
-                    <p>My dual expertise allows me to not only create visually compelling, high-performance websites (using HTML, CSS, WordPress, and modern design frameworks) but also optimize them for SEO, conversion rates, and multi-channel marketing impact.</p>
-                </div>
-                <div class="stats-box">
-                    <div class="stat-item">
-                        <h3>6+</h3>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>50+</h3>
-                        <p>Web & Marketing Projects</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>100%</h3>
-                        <p>Client Satisfaction</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Case Studies -->
+    <section id="work">
+      <h2>Featured Case Studies</h2>
+      <p class="section-subtitle">Real projects combining technical implementation with measurable marketing results.</p>
+      
+      <div class="grid">
+        <!-- Project 1 -->
+        <article class="card">
+          <div>
+            <div class="metric">+[X]% Conversion Rate</div>
+            <h3>Landing Page Redesign & A/B Testing</h3>
+            <p>
+              <strong>Problem:</strong> High ad bounce rates due to slow mobile load times and unclear CTAs.<br>
+              <strong>Action:</strong> Rebuilt the template in semantic HTML/CSS, compressed assets, and split-tested headline copy.<br>
+              <strong>Result:</strong> Cut load time to 1.1s and lifted lead form submissions.
+            </p>
+          </div>
+          <div class="tags">
+            <span class="tag">CRO</span>
+            <span class="tag">HTML/CSS/JS</span>
+            <span class="tag">A/B Testing</span>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <div>
+            <div class="metric">+[X]% Organic Traffic</div>
+            <h3>Technical SEO & Core Web Vitals Overhaul</h3>
+            <p>
+              <strong>Problem:</strong> Content pages were struggling to rank due to poor crawlability and layout shifts.<br>
+              <strong>Action:</strong> Added JSON-LD schema markup, fixed meta tags, and optimized Core Web Vitals.<br>
+              <strong>Result:</strong> Improved search visibility across [X] target keywords in 90 days.
+            </p>
+          </div>
+          <div class="tags">
+            <span class="tag">Technical SEO</span>
+            <span class="tag">Schema Markup</span>
+            <span class="tag">Search Console</span>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card">
+          <div>
+            <div class="metric">100% Funnel Visibility</div>
+            <h3>GA4 & Google Tag Manager Implementation</h3>
+            <p>
+              <strong>Problem:</strong> Marketing team lacked data on where users dropped off during checkout.<br>
+              <strong>Action:</strong> Configured custom event triggers in GTM to track scroll depth, button clicks, and form steps.<br>
+              <strong>Result:</strong> Identified a key mobile bottleneck and recovered lost leads.
+            </p>
+          </div>
+          <div class="tags">
+            <span class="tag">GA4</span>
+            <span class="tag">Tag Manager</span>
+            <span class="tag">Analytics</span>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Expertise Section -->
-    <section id="expertise" class="expertise">
-        <div class="container">
-            <h2>Core Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Web Design & Development</h3>
-                    <p>Creating clean, accessible, and responsive user interfaces using HTML5, CSS3, JavaScript, and CMS platforms like WordPress.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Digital Marketing</h3>
-                    <p>Developing strategic marketing funnels, SEO optimization, brand positioning, and performance tracking to maximize ROI.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>UI/UX & Branding</h3>
-                    <p>Designing intuitive wireframes, visual layouts, and cohesive brand identities that resonate with target audiences.</p>
-                </div>
-            </div>
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Technical & Marketing Stack</h2>
+      <p class="section-subtitle">The tools I use to build, measure, and scale digital campaigns.</p>
+      
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h3>Digital Marketing & Growth</h3>
+          <ul>
+            <li>Technical & On-Page SEO</li>
+            <li>Conversion Rate Optimization (CRO)</li>
+            <li>A/B & Multivariate Testing</li>
+            <li>Keyword Research & Content Strategy</li>
+            <li>Email Automation & Landing Pages</li>
+          </ul>
         </div>
-    </section>
 
-    <!-- Portfolio Projects Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img bg-1">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>E-Commerce Brand Overhaul</h3>
-                        <p>Redesigned a retail storefront and executed an organic SEO & social strategy that boosted online traffic by 45%.</p>
-                        <div class="tags">
-                            <span>Web Design</span>
-                            <span>SEO</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img bg-2">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>SaaS Digital Campaign</h3>
-                        <p>Developed landing page wireframes and managed multi-channel paid acquisition campaigns yielding high lead conversions.</p>
-                        <div class="tags">
-                            <span>UI/UX</span>
-                            <span>PPC & Analytics</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img bg-3">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Corporate WordPress Redesign</h3>
-                        <p>Delivered a fully responsive corporate website optimized for speed, accessibility, and seamless lead generation.</p>
-                        <div class="tags">
-                            <span>WordPress</span>
-                            <span>CSS3</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Let's Build Something Great Together</h2>
-            <p>Looking to elevate your web presence or scale your digital marketing? Reach out directly!</p>
-            <div class="contact-methods">
-                <a href="mailto:kiranmai.kodali@example.com" class="contact-btn"><i class="fas fa-envelope"></i> Email Me</a>
-                <a href="https://linkedin.com" target="_blank" class="contact-btn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                <a href="https://github.com" target="_blank" class="contact-btn"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Kiranmai Kodali. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        <div class="skill-box">
+          <h3>Analytics & Tracking</h3>
